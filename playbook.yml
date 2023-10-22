@@ -1,0 +1,13 @@
+---
+- name: Deploy LAMP Stack on Slave
+  hosts: 192.168.56.12
+  become: yes
+  tasks:
+    - name: Copy the bash script to the Slave
+      copy:
+        src: /home/vagrant/config.sh
+        dest: /var/tmp/config.sh
+        mode: '0744'
+
+    - name: Execute the bash script
+      shell: "bash /var/tmp/config.sh"
