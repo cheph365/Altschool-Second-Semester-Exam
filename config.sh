@@ -13,8 +13,8 @@ sudo systemctl restart sshd
 # Allow Apache through firewall
 sudo ufw allow in "Apache Full"
 # Install MySQL Server and provide a password for the root user
-# sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
-# sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
 sudo apt-get install mysql-server -y
 # Secure MySQL
 # sudo mysql_secure_installation
