@@ -10,4 +10,11 @@
         mode: '0744'
 
     - name: Execute the bash script
-      shell: "bash /home/vagrant/config.sh"
+      command: bash /home/vagrant/config.sh
+
+    - name: Set up cron job for uptime check
+      cron:
+        name: "uptime check"
+        minute: "0"
+        hour: "0"
+        job: "/usr/bin/uptime >> /var/log/uptime.log"
