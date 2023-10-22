@@ -17,7 +17,7 @@ sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password passwor
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
 sudo apt-get install mysql-server -y
 # Secure MySQL
-# sudo mysql_secure_installation
+sudo mysql_secure_installation
 # Set the MySQL root password and create database
 sudo mysql -u root <<EOF
 ALTER USER 'root'@'localhost' IDENTIFIED BY '$mysql_root_password';
